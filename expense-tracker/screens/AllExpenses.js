@@ -1,10 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
+import ExpensesOutput from "../components/ExpensesOutput";
 
 const AllExpenses = () => {
-    return (
-       <Text>AllExpenses component works!</Text>
-    );
+  return <ExpensesOutput></ExpensesOutput>;
 };
 
 export default AllExpenses;

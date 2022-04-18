@@ -72,8 +72,4 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  app: {
-    color: Theme.colors.text,
-  },
-});
+const styles = StyleSheet.create({});
