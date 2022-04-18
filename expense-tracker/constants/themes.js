@@ -1,6 +1,6 @@
 const LightTheme = {
   colors: {
-    primary: "#00677d",
+    primary: "#FFFBFE",
     secondary: "#4b6269",
     tertiary: "#585c7e",
     error: "#ba1b1b",

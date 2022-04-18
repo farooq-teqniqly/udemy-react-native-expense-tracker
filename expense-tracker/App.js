@@ -2,12 +2,13 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, Button } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ManageExpense from "./screens/ManageExpense";
 import RecentExpenses from "./screens/RecentExpenses";
 import AllExpenses from "./screens/AllExpenses";
 import Theme from "./constants/themes";
+import IconButton from "./components/ui/IconButton";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -19,13 +20,15 @@ function configureIcon(name, color, size) {
 function BottomTabsNavigator() {
   return (
     <BottomTabs.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: Theme.colors.primary },
-        headerTintColor: Theme.colors.background,
-        tabBarActiveTintColor: Theme.colors.primary,
-        tabBarStyle: { backgroundColor: Theme.colors.primary },
-        tabBarActiveTintColor: Theme.colors.background,
-      }}
+      screenOptions={
+        {
+          // headerStyle: { backgroundColor: Theme.colors.primary },
+          // headerTintColor: Theme.colors.background,
+          // tabBarActiveTintColor: Theme.colors.primary,
+          // tabBarStyle: { backgroundColor: Theme.colors.primary },
+          // tabBarActiveTintColor: Theme.colors.background,
+        }
+      }
     >
       <BottomTabs.Screen
         name="RecentExpenses"
@@ -60,7 +63,17 @@ export default function App() {
           <Stack.Screen
             name="ExpensesOverview"
             component={BottomTabsNavigator}
-            options={{ headerShown: false }}
+            options={{
+              title: "Expense Tracker",
+              headerShown: true,
+              headerRight: () => (
+                <IconButton
+                  icon="add"
+                  size={36}
+                  color={Theme.colors.secondary}
+                ></IconButton>
+              ),
+            }}
           ></Stack.Screen>
           <Stack.Screen
             name="ManageExpense"
