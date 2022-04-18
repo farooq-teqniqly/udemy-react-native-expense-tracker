@@ -2,7 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { StyleSheet, Text, Button } from "react-native";
+import { StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import ManageExpense from "./screens/ManageExpense";
 import RecentExpenses from "./screens/RecentExpenses";
@@ -63,7 +63,7 @@ export default function App() {
           <Stack.Screen
             name="ExpensesOverview"
             component={BottomTabsNavigator}
-            options={{
+            options={({ navigation }) => ({
               title: "Expense Tracker",
               headerShown: true,
               headerRight: () => (
@@ -71,9 +71,12 @@ export default function App() {
                   icon="add"
                   size={36}
                   color={Theme.colors.secondary}
+                  onPress={() => {
+                    navigation.navigate("ManageExpense");
+                  }}
                 ></IconButton>
               ),
-            }}
+            })}
           ></Stack.Screen>
           <Stack.Screen
             name="ManageExpense"
