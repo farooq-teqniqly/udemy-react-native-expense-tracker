@@ -1,23 +1,27 @@
 const LightTheme = {
-    primary: "#006a6b",
-    secondary: "#855300",
-    tertiary: "#994061",
-    error: "#B3261E",
-    background: "#fbfdfd",
+  colors: {
+    primary: "#00677d",
+    secondary: "#4b6269",
+    tertiary: "#585c7e",
+    error: "#ba1b1b",
+    background: "#FFFBFE",
     outline: "#79747E",
-    text: "#191c1d"
-}
+    text: "#1C1B1F",
+  },
+};
 
 const DarkTheme = {
-    primary: "#02dddd",
-    secondary: "#ffb958",
-    tertiary: "#ffb1ca",
-    error: "#F2B8B5",
-    background: "#191c1d",
+  colors: {
+    primary: "#58d5f7",
+    secondary: "#b2cad3",
+    tertiary: "#c1c4eb",
+    error: "#ffb4a9",
+    background: "#1C1B1F",
     outline: "#938F99",
-    text: "#e0e3e3"
-}
+    text: "#E6E1E5",
+  },
+};
 
- const Theme = LightTheme;
+const Theme = LightTheme;
 
- export default Theme;
+export default Theme;
