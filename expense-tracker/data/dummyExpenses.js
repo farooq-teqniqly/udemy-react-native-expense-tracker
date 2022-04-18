@@ -29,6 +29,36 @@ const DummyExpenses = [
     amount: 65.81,
     date: new Date("2021-04-14"),
   },
+  {
+    id: "e6",
+    description: "Fuel for car",
+    amount: 65.81,
+    date: new Date("2021-04-14"),
+  },
+  {
+    id: "e7",
+    description: "Fuel for car",
+    amount: 65.81,
+    date: new Date("2021-04-14"),
+  },
+  {
+    id: "e8",
+    description: "Fuel for car",
+    amount: 65.81,
+    date: new Date("2021-04-14"),
+  },
+  {
+    id: "e9",
+    description: "Fuel for car",
+    amount: 65.81,
+    date: new Date("2021-04-14"),
+  },
+  {
+    id: "e10",
+    description: "Corporate dinner",
+    amount: 2500.87,
+    date: new Date("2021-04-18"),
+  },
 ];
 
 export default DummyExpenses;
