@@ -9,6 +9,7 @@ import RecentExpenses from "./screens/RecentExpenses";
 import AllExpenses from "./screens/AllExpenses";
 import Theme from "./constants/themes";
 import IconButton from "./components/ui/IconButton";
+import ExpensesContextProvider from "./store/expenses-context";
 
 const Stack = createNativeStackNavigator();
 const BottomTabs = createBottomTabNavigator();
@@ -58,40 +59,42 @@ export default function App() {
   return (
     <>
       <StatusBar style="auto" />
-      <NavigationContainer>
-        <Stack.Navigator
-          screenOptions={{
-            headerStyle: { backgroundColor: Theme.colors.primary },
-            // headerTintColor: Theme.colors.primary,
-          }}
-        >
-          <Stack.Screen
-            name="ExpensesOverview"
-            component={BottomTabsNavigator}
-            options={({ navigation }) => ({
-              title: "Expense Tracker",
-              headerShown: true,
-              headerRight: () => (
-                <IconButton
-                  icon="add"
-                  size={36}
-                  color={Theme.colors.secondary}
-                  onPress={() => {
-                    navigation.navigate("ManageExpense");
-                  }}
-                ></IconButton>
-              ),
-            })}
-          ></Stack.Screen>
-          <Stack.Screen
-            name="ManageExpense"
-            component={ManageExpense}
-            options={{
-              title: "Manage Expense",
+      <ExpensesContextProvider>
+        <NavigationContainer>
+          <Stack.Navigator
+            screenOptions={{
+              headerStyle: { backgroundColor: Theme.colors.primary },
+              // headerTintColor: Theme.colors.primary,
             }}
-          ></Stack.Screen>
-        </Stack.Navigator>
-      </NavigationContainer>
+          >
+            <Stack.Screen
+              name="ExpensesOverview"
+              component={BottomTabsNavigator}
+              options={({ navigation }) => ({
+                title: "Expense Tracker",
+                headerShown: true,
+                headerRight: () => (
+                  <IconButton
+                    icon="add"
+                    size={36}
+                    color={Theme.colors.secondary}
+                    onPress={() => {
+                      navigation.navigate("ManageExpense");
+                    }}
+                  ></IconButton>
+                ),
+              })}
+            ></Stack.Screen>
+            <Stack.Screen
+              name="ManageExpense"
+              component={ManageExpense}
+              options={{
+                title: "Manage Expense",
+              }}
+            ></Stack.Screen>
+          </Stack.Navigator>
+        </NavigationContainer>
+      </ExpensesContextProvider>
     </>
   );
 }

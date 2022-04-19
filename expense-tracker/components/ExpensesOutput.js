@@ -1,18 +1,17 @@
 import { View, StyleSheet } from "react-native";
 import ExpensesSummary from "./ExpensesSummary";
 import ExpensesList from "./ExpensesList";
-import DummyExpenses from "../data/dummyExpenses";
 import Theme from "../constants/themes";
 
-function ExpensesOutput({ periodName }) {
+function ExpensesOutput({ expenses, periodName }) {
   return (
     <View style={styles.container}>
       <ExpensesSummary
-        expenses={DummyExpenses}
+        expenses={expenses}
         periodName={periodName}
       ></ExpensesSummary>
       <View style={styles.list}>
-        <ExpensesList expenses={DummyExpenses}></ExpensesList>
+        <ExpensesList expenses={expenses}></ExpensesList>
       </View>
     </View>
   );
