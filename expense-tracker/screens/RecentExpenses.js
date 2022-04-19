@@ -14,6 +14,7 @@ const RecentExpenses = () => {
     <ExpensesOutput
       expenses={recentExpenses}
       periodName="Expenses for the last 7 days"
+      fallbackText="No expenses"
     ></ExpensesOutput>
   );
 };

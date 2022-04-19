@@ -4,7 +4,12 @@ import { ExpensesContext } from "../store/expenses-context";
 
 const AllExpenses = () => {
   const context = useContext(ExpensesContext);
-  return <ExpensesOutput expenses={context.expenses}></ExpensesOutput>;
+  return (
+    <ExpensesOutput
+      expenses={context.expenses}
+      fallbackText="No expenses"
+    ></ExpensesOutput>
+  );
 };
 
 export default AllExpenses;
