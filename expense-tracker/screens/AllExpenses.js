@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import ExpensesOutput from "../components/ExpensesOutput";
-import { ExpensesContext } from "../store/expenses-context";
+import { ExpensesContext } from "../store/ExpensesContext";
 
 const AllExpenses = () => {
   const context = useContext(ExpensesContext);

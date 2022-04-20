@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import IconButton from "../components/ui/IconButton";
 import Theme from "../constants/themes";
 import Button from "../components/ui/Button";
-import { ExpensesContext } from "../store/expenses-context";
+import { ExpensesContext } from "../store/ExpensesContext";
 import { dateSubtract } from "../utils/date";
 
 function ManageExpense({ route, navigation }) {
