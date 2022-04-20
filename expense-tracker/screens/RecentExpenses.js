@@ -12,7 +12,7 @@ const RecentExpenses = () => {
   const recentExpenses = context.expenses.filter((expense) => {
     return (
       expense.date >
-      dateSubtract(new Date(), parseInt(expensePeriodContext.period))
+      dateSubtract(new Date(), expensePeriodContext.period)
     );
   });
 
