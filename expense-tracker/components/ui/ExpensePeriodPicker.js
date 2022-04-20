@@ -1,8 +1,8 @@
 import { View, Picker } from "react-native";
 
 function ExpensePeriodPicker({period, setPeriod}) {
+
     function valueChangedHandler(itemValue, itemIndex) {
-        console.log(`${itemValue}, ${itemIndex}`);
         setPeriod(itemValue);
     }
 
