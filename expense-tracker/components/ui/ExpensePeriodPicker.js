@@ -17,4 +17,4 @@ function ExpensePeriodPicker({period, setPeriod}) {
     );
 };
 
-export default PeriodPicker;
+export default ExpensePeriodPicker;
